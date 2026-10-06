@@ -181,9 +181,19 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .js-motion .reveal { opacity: 0; transform: translateY(12px); transition: opacity 420ms ease-out, transform 420ms cubic-bezier(.2,.75,.25,1); }
 .js-motion .reveal:focus-within { opacity: 1; transform: none; }
 .js-motion .reveal.is-visible { opacity: 1; transform: translateY(0); }
+/* Keep essential copy and workflow rows readable before their observer fires. */
+.js-motion .section-intro,
+.js-motion .gym-copy,
+.js-motion .wall-card,
+.js-motion .vision-copy,
+.js-motion .future-heading,
+.js-motion .future-copy,
+.js-motion .journey-step { opacity: 1; transform: none; }
 .js-motion .journey-step:nth-of-type(2) { transition-delay: 0ms; }
 .js-motion .journey-step:nth-of-type(4) { transition-delay: 70ms; }
 .js-motion .journey-step:nth-of-type(6) { transition-delay: 140ms; }
+.js-motion .journey-step .step-icon { opacity: 0; transform: translateY(8px); transition: opacity 320ms cubic-bezier(.2,.75,.25,1), transform 320ms cubic-bezier(.2,.75,.25,1); }
+.js-motion .journey-step.is-visible .step-icon { opacity: 1; transform: translateY(0); }
 .js-motion .journey-connector:nth-of-type(3) { transition-delay: 70ms; }
 .js-motion .journey-connector:nth-of-type(5) { transition-delay: 140ms; }
 .journey-connector { transform-origin: left; }
@@ -263,7 +273,7 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
   :root { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .js-motion .reveal { opacity: 1; transform: none; }
-  .js-motion .journey-step { opacity: 1; transform: none; }
+  .js-motion .journey-step .step-icon { opacity: 1; transform: none; }
   .js-motion .gym-section::before { width: 100%; }
   .js-motion .wall-card::after { width: 100%; }
   .js-motion .journey-connector { transform: none; }
