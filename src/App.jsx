@@ -38,12 +38,14 @@ export default function App() {
         <div className="hero-copy">
           <p className="eyebrow"><span className="eyebrow-dot"></span> OnSight Climbing</p>
           <h1 id="hero-title">See your climbing journey <em>more clearly.</em></h1>
-          <p className="hero-lede">Explore OnSight’s approach to route discovery, climb logging and session history, with route tools for gym teams.</p>
+          <p className="hero-lede">Explore how OnSight connects route discovery, climb logging and session history, with route tools for gym teams.</p>
           <div className="hero-actions"><a className="button button-dark" href="#app">Explore the app <span aria-hidden="true">↓</span></a><a className="text-link" href="#vision">See the vision <span aria-hidden="true">↘</span></a></div>
         </div>
-        <div className="hero-art" aria-label="Abstract illustration of a climbing wall and a route from start to finish" role="img">
+        <div className="hero-art">
           <div className="art-label art-label-top">Concept illustration.</div>
-          <svg className="climb-illustration" viewBox="0 0 560 590" fill="none" aria-hidden="true" focusable="false">
+          <svg className="climb-illustration" viewBox="0 0 560 590" fill="none" role="img" aria-labelledby="route-title route-description" focusable="false">
+            <title id="route-title">A route from first hold to finish</title>
+            <desc id="route-description">A conceptual climbing wall with a traced route from a labeled start to an orange finish marker.</desc>
             <path className="wall-shape" d="M73 38h414v500H73z" />
             <path className="wall-line" d="M211 38v500M349 38v500M73 163h414M73 288h414M73 413h414" />
             <g className="holds" fill="currentColor">
@@ -53,11 +55,12 @@ export default function App() {
               <path d="m181 365 18-12 18 8 1 18-19 10-17-7-1-17Z"/><path d="m264 455 20-8 16 11-5 19-19 3-14-10 2-15Z"/>
             </g>
             <path className="route-path" pathLength="1" d="M280 475c-4-39-58-41-89-78-35-42 26-77 99-120 54-32 109-58 131-95" />
-            <circle className="route-start" cx="280" cy="475" r="11"/><circle className="route-end" cx="421" cy="182" r="13"/>
+            <circle className="route-start" cx="280" cy="475" r="11"/><text className="route-marker-label" x="246" y="501">START</text>
+            <circle className="route-end" cx="421" cy="182" r="13"/><text className="route-marker-label" x="438" y="187">FINISH</text>
             <path className="route-arrow" d="m409 179 12 3-7 11" />
           </svg>
-          <div className="art-label art-label-bottom"><span className="route-key" aria-hidden="true"></span> Every attempt is part of it</div>
-          <span className="art-index" aria-hidden="true">01 / 04</span>
+          <div className="art-label art-label-bottom"><span className="route-key" aria-hidden="true"></span> Route from first hold to finish</div>
+          <span className="art-index" aria-hidden="true">01 / 03</span>
         </div>
       </section>
 
@@ -69,25 +72,25 @@ export default function App() {
         <div className="section-intro reveal">
           <p className="eyebrow">01 <span className="eyebrow-rule"></span> For your next session</p>
           <h2 id="app-title">From the wall to your <em>climbing record.</em></h2>
-          <p>Explore the app flows for discovering routes, logging climbs and revisiting sessions.</p>
+          <p>Follow a route from discovery to a record you can revisit.</p>
           <p className="product-maturity">Product preview · availability unverified.</p>
           <a className="text-link" href="#vision">See the vision <span aria-hidden="true">↘</span></a>
         </div>
         <div className="journey-board" role="group" aria-label="Conceptual illustration of a climbing session, not a product screenshot">
           <div className="board-top"><span>APP FLOWS TO EXPLORE</span><span className="concept-label">Concept illustration.</span></div>
           <div className="journey-step reveal">
-            <span className="step-number">01</span><span className="step-icon icon-pin" aria-hidden="true">⌖</span>
-            <div><h3>Find</h3><p>Choose a gym and discover a route.</p></div><span className="step-state">Explore</span>
+            <span className="step-number">01</span><span className="step-icon icon-pin" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></svg></span>
+            <div><h3>Find</h3><p>Choose a gym and discover a route, including a QR path.</p></div><span className="step-state">Explore</span>
           </div>
           <div className="journey-connector reveal" aria-hidden="true"></div>
           <div className="journey-step reveal">
-            <span className="step-number">02</span><span className="step-icon icon-route" aria-hidden="true">↗</span>
-            <div><h3>Log</h3><p>Record an ascent from your session.</p></div><span className="step-state">Explore</span>
+            <span className="step-number">02</span><span className="step-icon icon-route" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 18c4-1 4-11 9-11h5M14 4l5 3-3 4"/></svg></span>
+            <div><h3>Log</h3><p>Record an ascent as part of a session.</p></div><span className="step-state">Explore</span>
           </div>
           <div className="journey-connector reveal" aria-hidden="true"></div>
           <div className="journey-step reveal">
-            <span className="step-number">03</span><span className="step-icon icon-log" aria-hidden="true">⌁</span>
-            <div><h3>Revisit</h3><p>Look back through sessions and history.</p></div><span className="step-state">Explore</span>
+            <span className="step-number">03</span><span className="step-icon icon-log" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 6h14M5 12h14M5 18h9"/><circle cx="17" cy="18" r="2"/></svg></span>
+            <div><h3>Revisit</h3><p>Look back at sessions and climbing history.</p></div><span className="step-state">Explore</span>
           </div>
           <p className="concept-note">Concept illustration.</p>
         </div>
@@ -98,17 +101,19 @@ export default function App() {
           <div className="gym-copy reveal">
             <p className="eyebrow eyebrow-light">02 <span className="eyebrow-rule"></span> For climbing teams</p>
             <h2 id="gym-title">A clearer view of the wall <em>for your team.</em></h2>
-            <p>Staff tools are being developed for route inventory and editing. Release readiness and access are still being verified.</p>
+            <p>Staff route inventory and editing are visible in the product work. Release readiness and access are still being verified.</p>
             <p className="product-maturity">Product preview · availability unverified.</p>
           </div>
           <div className="wall-card reveal" aria-label="Conceptual route-setting board, not a product screenshot">
             <div className="wall-card-head"><span>THE WALL, AT A GLANCE</span><span className="mini-status">Concept illustration.</span></div>
-            <div className="staff-flow" role="group" aria-label="Staff workflow in development: inventory, find a route, create or edit">
-              <div><span>01</span><i aria-hidden="true">▤</i><b>Inventory</b></div><span className="flow-arrow" aria-hidden="true">→</span>
-              <div><span>02</span><i aria-hidden="true">⌕</i><b>Find a route</b></div><span className="flow-arrow" aria-hidden="true">→</span>
-              <div><span>03</span><i aria-hidden="true">＋</i><b>Create / edit</b></div>
-            </div>
-            <div className="wall-card-foot"><span>A concept for route-setting work.</span><span aria-hidden="true">↗</span></div>
+            <ol className="staff-flow" aria-label="Staff route workflow">
+              <li><span className="staff-step-number">01</span><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M7 8h18v18H7zM11 4h18v18M11 13h10M11 18h10M11 23h6" /></svg><b>Inventory</b></li>
+              <li className="flow-arrow" aria-hidden="true">→</li>
+              <li><span className="staff-step-number">02</span><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="13" cy="13" r="7"/><path d="m18 18 8 8M9 13h8M13 9v8" /></svg><b>Find a route</b></li>
+              <li className="flow-arrow" aria-hidden="true">→</li>
+              <li><span className="staff-step-number">03</span><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="m19 6 7 7M7 25l4-1 14-14-3-3L8 21zM6 28h21" /></svg><b>Create or edit</b></li>
+            </ol>
+            <div className="wall-card-foot"><span>Staff route tools are under development. Release readiness and access are still being verified.</span><span aria-hidden="true">↗</span></div>
             <p className="concept-note concept-note-dark">Concept illustration.</p>
           </div>
         </div>
