@@ -127,7 +127,8 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .wall-card-head { color: #777e75; }
 .mini-status { color: #a3654f; }
 .staff-flow { min-height: 247px; margin-block: 19px; display: flex; justify-content: space-between; align-items: center; padding: 24px 12px; border: 1px solid #c9cbbf; background: repeating-linear-gradient(0deg, transparent 0 48px, rgba(80,91,78,.12) 49px 50px), repeating-linear-gradient(90deg, transparent 0 59px, rgba(80,91,78,.12) 60px 61px), #e1e2d7; }
-.staff-flow > div { position: relative; min-width: 100px; min-height: 105px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; background: rgba(244,245,239,.86); border-radius: 20px; }
+.staff-flow { gap: 8px; }
+.staff-flow > div { position: relative; min-width: 0; flex: 1; min-height: 105px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; background: rgba(244,245,239,.86); border-radius: 20px; }
 .staff-flow > div > span { position: absolute; top: 9px; left: 11px; color: #71786e; font: 8px var(--mono); }
 .staff-flow i { color: var(--green); font-size: 28px; font-style: normal; }
 .staff-flow b { font: 600 10px var(--sans); }
@@ -236,7 +237,7 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
   .gym-inner { gap: 36px; }
   .wall-card { padding: 16px; }
   .staff-flow { min-height: 190px; padding: 12px 5px; }
-  .staff-flow > div { min-width: 74px; min-height: 95px; border-radius: 13px; }
+  .staff-flow > div { min-height: 95px; border-radius: 13px; }
   .staff-flow b { font-size: 8px; }
   .flow-arrow { font-size: 13px; }
   .vision-section { padding-block: 80px; gap: 39px; }
