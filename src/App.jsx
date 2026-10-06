@@ -38,12 +38,11 @@ export default function App() {
         <div className="hero-copy">
           <p className="eyebrow"><span className="eyebrow-dot"></span> OnSight Climbing</p>
           <h1 id="hero-title">See your climbing journey <em>more clearly.</em></h1>
-          <p className="hero-lede">Explore the climbs you try, the sessions you build and the routes your gym sets—all in one connected idea for climbing.</p>
+          <p className="hero-lede">Explore OnSight’s approach to route discovery, climb logging and session history, with route tools for gym teams.</p>
           <div className="hero-actions"><a className="button button-dark" href="#app">Explore the app <span aria-hidden="true">↓</span></a><a className="text-link" href="#vision">See the vision <span aria-hidden="true">↘</span></a></div>
-          <p className="hero-note">A climbing app and connected tools for gyms.</p>
         </div>
         <div className="hero-art" aria-label="Abstract illustration of a climbing wall and a route from start to finish" role="img">
-          <div className="art-label art-label-top">Concept / Route log</div>
+          <div className="art-label art-label-top">Concept illustration.</div>
           <svg className="climb-illustration" viewBox="0 0 560 590" fill="none" aria-hidden="true" focusable="false">
             <path className="wall-shape" d="M73 38h414v500H73z" />
             <path className="wall-line" d="M211 38v500M349 38v500M73 163h414M73 288h414M73 413h414" />
@@ -70,11 +69,12 @@ export default function App() {
         <div className="section-intro reveal">
           <p className="eyebrow">01 <span className="eyebrow-rule"></span> For your next session</p>
           <h2 id="app-title">From the wall to your <em>climbing record.</em></h2>
-          <p>OnSight brings route discovery, ascent logging and session history into the same journey. The exact live availability of each flow still needs verification.</p>
+          <p>Explore the app flows for discovering routes, logging climbs and revisiting sessions.</p>
+          <p className="product-maturity">Product preview · availability unverified.</p>
           <a className="text-link" href="#vision">See the vision <span aria-hidden="true">↘</span></a>
         </div>
         <div className="journey-board" role="group" aria-label="Conceptual illustration of a climbing session, not a product screenshot">
-          <div className="board-top"><span>APP FLOWS TO EXPLORE</span><span>CONCEPT / 01</span></div>
+          <div className="board-top"><span>APP FLOWS TO EXPLORE</span><span className="concept-label">Concept illustration.</span></div>
           <div className="journey-step reveal">
             <span className="step-number">01</span><span className="step-icon icon-pin" aria-hidden="true">⌖</span>
             <div><h3>Find</h3><p>Choose a gym and discover a route.</p></div><span className="step-state">Explore</span>
@@ -89,7 +89,7 @@ export default function App() {
             <span className="step-number">03</span><span className="step-icon icon-log" aria-hidden="true">⌁</span>
             <div><h3>Revisit</h3><p>Look back through sessions and history.</p></div><span className="step-state">Explore</span>
           </div>
-          <p className="concept-note"><span aria-hidden="true">✳</span> A conceptual view of app workflows—not a screenshot.</p>
+          <p className="concept-note">Concept illustration.</p>
         </div>
       </section>
 
@@ -99,17 +99,17 @@ export default function App() {
             <p className="eyebrow eyebrow-light">02 <span className="eyebrow-rule"></span> For climbing teams</p>
             <h2 id="gym-title">A clearer view of the wall <em>for your team.</em></h2>
             <p>Staff tools are being developed for route inventory and editing. Release readiness and access are still being verified.</p>
-            <span className="status-pill"><span></span> In development</span>
+            <p className="product-maturity">Product preview · availability unverified.</p>
           </div>
           <div className="wall-card reveal" aria-label="Conceptual route-setting board, not a product screenshot">
-            <div className="wall-card-head"><span>THE WALL, AT A GLANCE</span><span className="mini-status">CONCEPT</span></div>
+            <div className="wall-card-head"><span>THE WALL, AT A GLANCE</span><span className="mini-status">Concept illustration.</span></div>
             <div className="staff-flow" role="group" aria-label="Staff workflow in development: inventory, find a route, create or edit">
               <div><span>01</span><i aria-hidden="true">▤</i><b>Inventory</b></div><span className="flow-arrow" aria-hidden="true">→</span>
               <div><span>02</span><i aria-hidden="true">⌕</i><b>Find a route</b></div><span className="flow-arrow" aria-hidden="true">→</span>
               <div><span>03</span><i aria-hidden="true">＋</i><b>Create / edit</b></div>
             </div>
             <div className="wall-card-foot"><span>A concept for route-setting work.</span><span aria-hidden="true">↗</span></div>
-            <p className="concept-note concept-note-dark">Staff workflow in development. This is a concept, not a product screenshot.</p>
+            <p className="concept-note concept-note-dark">Concept illustration.</p>
           </div>
         </div>
       </section>
@@ -119,7 +119,7 @@ export default function App() {
         <div className="vision-copy reveal">
           <p className="eyebrow">03 <span className="eyebrow-rule"></span> Our direction</p>
           <h2 id="vision-title">Better context for <em>every climb.</em></h2>
-          <p>Our direction is to help climbers remember their progress and help gyms keep their wall information useful. This is a vision statement, not a shipped feature claim.</p>
+          <p>Our vision is to help climbers remember their progress and help gyms keep their wall information useful.</p>
           <a className="button button-outline" href="#future">Where we're heading <span aria-hidden="true">↓</span></a>
         </div>
       </section>
@@ -132,7 +132,7 @@ export default function App() {
           </div>
           <div className="future-copy reveal">
             <span className="exploring-tag">Exploring next</span>
-            <p>We are learning which connected gym and climbing workflows matter most. This section will change as product scope is confirmed.</p>
+            <p>Possible directions include smoother gym workflows and richer climbing context. These are ideas to assess, not committed features.</p>
           </div>
           <div className="future-route" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
