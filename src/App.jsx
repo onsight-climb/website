@@ -39,6 +39,11 @@ export default function App() {
           <p className="eyebrow"><span className="eyebrow-dot"></span> OnSight Climbing</p>
           <h1 id="hero-title">See your climbing journey <em>more clearly.</em></h1>
           <p className="hero-lede">Explore how OnSight connects route discovery, climb logging and session history, with route tools for gym teams.</p>
+          <ol className="hero-journey" aria-label="Climbing journey: find, log, revisit">
+            <li><span>01</span>Find <span className="hero-journey-arrow" aria-hidden="true">→</span></li>
+            <li><span>02</span>Log <span className="hero-journey-arrow" aria-hidden="true">→</span></li>
+            <li><span>03</span>Revisit</li>
+          </ol>
           <div className="hero-actions"><a className="button button-dark" href="#app">Explore the app <span aria-hidden="true">↓</span></a><a className="text-link" href="#vision">See the vision <span aria-hidden="true">↘</span></a></div>
         </div>
         <div className="hero-art">
