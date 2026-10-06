@@ -257,7 +257,7 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
   .staff-flow svg { width: 28px; height: 28px; flex: 0 0 28px; }
   .staff-flow b { padding: 0; font-size: 15px; }
   .flow-arrow { height: 13px; font-size: 0; line-height: 0; }
-  .flow-arrow::before { content: ''; display: block; width: 1px; height: 13px; margin: auto; background: var(--green); }
+  .flow-arrow::before { content: ''; display: block; width: 1px; height: 13px; margin: auto; background: currentColor; }
   .vision-section { padding-block: 80px; gap: 39px; }
   .vision-mark { width: min(100%, 290px); align-self: center; }
   .vision-mark span { font-size: 108px; }
@@ -342,13 +342,8 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .js-motion .motion-app .journey-step:nth-of-type(5) .step-icon { transition-delay: 140ms; }
 .js-motion .motion-app .journey-connector { transform: scaleX(0); transform-origin: left; transition: transform 360ms cubic-bezier(.2,.75,.25,1); }
 .js-motion .motion-app .journey-connector.is-visible { transform: scaleX(1); }
-.js-motion .motion-staff .staff-stage { opacity: 0; transform: translateY(16px); transition: opacity 360ms ease, transform 430ms cubic-bezier(.2,.75,.25,1); }
-.js-motion .motion-staff .staff-stage.is-visible { opacity: 1; transform: translateY(0); }
-.js-motion .motion-staff .staff-stage:nth-of-type(1) { transition-delay: 0ms; }
-.js-motion .motion-staff .staff-stage:nth-of-type(3) { transition-delay: 80ms; }
-.js-motion .motion-staff .staff-stage:nth-of-type(5) { transition-delay: 160ms; }
-.js-motion .motion-staff .flow-arrow { opacity: 0; transition: opacity 300ms ease; }
-.js-motion .motion-staff .flow-arrow.is-visible { opacity: 1; }
+.js-motion .motion-staff .flow-arrow { color: #8c998b; transition: color 300ms ease; }
+.js-motion .motion-staff .flow-arrow.is-visible { color: var(--green); }
 .js-motion .motion-vision .vision-mark svg .vision-path { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .js-motion .motion-vision .vision-mark.is-visible svg .vision-path { animation: trace-vision 900ms cubic-bezier(.2,.75,.25,1) 100ms both; }
 .js-motion .motion-vision .vision-mark svg .vision-orbit { opacity: 0; transform: scale(.82) rotate(-18deg); transform-origin: center; transition: opacity 400ms ease, transform 650ms cubic-bezier(.2,.75,.25,1); }
@@ -356,7 +351,7 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .js-motion .motion-vision .vision-mark.is-visible svg .vision-orbit-inner { transition-delay: 100ms; }
 @keyframes trace-vision { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) {
-  .js-motion .motion-app .journey-step .step-icon, .js-motion .motion-staff .staff-stage, .js-motion .motion-staff .flow-arrow { opacity: 1; transform: none; }
+  .js-motion .motion-app .journey-step .step-icon, .js-motion .motion-staff .flow-arrow { opacity: 1; transform: none; }
   .js-motion .motion-app .journey-connector { transform: none; }
   .js-motion .motion-vision .vision-mark svg .vision-path { animation: none; stroke-dasharray: none; stroke-dashoffset: 0; }
   .js-motion .motion-vision .vision-mark svg .vision-orbit { opacity: 1; transform: none; }
@@ -393,10 +388,10 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
   .staff-flow > .staff-stage svg { width: 28px; height: 28px; flex: 0 0 28px; }
   .staff-flow > .staff-stage b { padding: 0; font-size: 15px; }
   .staff-flow > .flow-arrow { height: 13px; font-size: 0; line-height: 0; }
-  .staff-flow > .flow-arrow::before { content: ''; display: block; width: 1px; height: 13px; margin: auto; background: var(--green); }
+  .staff-flow > .flow-arrow::before { content: ''; display: block; width: 1px; height: 13px; margin: auto; background: currentColor; }
   .vision-hero { min-height: auto; padding-block: 55px 68px; display: flex; flex-direction: column; align-items: stretch; gap: 36px; }
   .vision-hero .vision-mark { width: min(100%, 280px); align-self: center; }
-  .vision-copy > p:not(.eyebrow) { font-size: 14px; }
+  .vision-copy > p:not(.eyebrow) { font-size: 16px; }
   .future-section { padding-block: 67px; }
   .future-inner { display: flex; flex-direction: column; align-items: stretch; gap: 28px; }
   .future-copy { border-radius: 0; }

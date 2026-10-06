@@ -86,7 +86,7 @@ export default function App() {
       for (const entry of entries) if (entry.isIntersecting) { entry.target.classList.add('is-visible'); currentObserver.unobserve(entry.target); }
     }, { threshold: 0.15 });
     document.documentElement.classList.add('js-motion');
-    document.querySelectorAll('.journey-step, .journey-connector, .staff-stage, .flow-arrow, .vision-mark').forEach((item) => observer.observe(item));
+    document.querySelectorAll('.journey-step, .journey-connector, .flow-arrow, .vision-mark').forEach((item) => observer.observe(item));
     return () => { observer.disconnect(); document.documentElement.classList.remove('js-motion'); };
   }, []);
   const current = page === 'staff' ? '/gyms' : page === 'home' ? '/' : `/${page}`;
