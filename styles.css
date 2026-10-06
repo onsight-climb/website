@@ -72,6 +72,7 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 @keyframes draw-route { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 .route-start { fill: var(--lime); stroke: var(--ink); stroke-width: 2; }
 .route-end { fill: var(--orange); stroke: var(--paper); stroke-width: 4; }
+.route-marker-label { fill: var(--ink); font: 9px var(--mono); letter-spacing: .08em; }
 .route-arrow { stroke: var(--paper); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .art-label { position: absolute; z-index: 2; font: 500 9px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .art-label-top { top: 27px; left: 29px; text-transform: none; letter-spacing: 0; }
@@ -101,10 +102,11 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .js-motion .journey-step { opacity: 0; transform: translateY(12px); transition: opacity 420ms cubic-bezier(.2,.75,.25,1), transform 420ms cubic-bezier(.2,.75,.25,1); }
 .js-motion .journey-step.is-visible { opacity: 1; transform: translateY(0); }
 .step-number { align-self: start; padding-top: 24px; color: #8b9188; font: 9px var(--mono); }
-.step-icon { width: 35px; height: 35px; display: grid; place-items: center; background: var(--paper); border-radius: 50%; font-size: 19px; }
+.step-icon { width: 35px; height: 35px; display: grid; place-items: center; background: var(--paper); border-radius: 50%; }
+.step-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .icon-route { color: #bd684c; }
 .journey-step h3 { margin: 0 0 4px; font: 600 13px var(--display); letter-spacing: -.02em; }
-.journey-step p { margin: 0; color: #777e75; font-size: 10px; }
+.journey-step p { max-width: 280px; margin: 0; color: #59635c; font-size: 14px; line-height: 1.45; }
 .step-state { padding: 5px 8px; border: 1px solid #bdc3b4; border-radius: 20px; color: #526658; font: 8px var(--mono); text-transform: uppercase; }
 .journey-connector { height: 1px; margin-left: 81px; background: #d2d1c5; }
 .js-motion .journey-connector.is-visible { transform: scaleX(1); }
@@ -126,12 +128,11 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .js-motion .wall-card.is-visible::after { width: 100%; }
 .wall-card-head { color: #777e75; }
 .mini-status { color: #a3654f; text-transform: none; letter-spacing: 0; }
-.staff-flow { min-height: 247px; margin-block: 19px; display: flex; justify-content: space-between; align-items: center; padding: 24px 12px; border: 1px solid #c9cbbf; background: repeating-linear-gradient(0deg, transparent 0 48px, rgba(80,91,78,.12) 49px 50px), repeating-linear-gradient(90deg, transparent 0 59px, rgba(80,91,78,.12) 60px 61px), #e1e2d7; }
-.staff-flow { gap: 8px; }
-.staff-flow > div { position: relative; min-width: 0; flex: 1; min-height: 105px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; background: rgba(244,245,239,.86); border-radius: 20px; }
-.staff-flow > div > span { position: absolute; top: 9px; left: 11px; color: #71786e; font: 8px var(--mono); }
-.staff-flow i { color: var(--green); font-size: 28px; font-style: normal; }
-.staff-flow b { font: 600 10px var(--sans); }
+.staff-flow { min-height: 247px; margin: 19px 0; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 24px 12px; list-style: none; border: 1px solid #c9cbbf; background: #e1e2d7; }
+.staff-flow > li:not(.flow-arrow) { position: relative; min-width: 0; flex: 1; min-height: 138px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; background: var(--paper); text-align: center; }
+.staff-step-number { position: absolute; top: 10px; left: 12px; color: #58635b; font: 11px var(--mono); }
+.staff-flow svg { width: 36px; height: 36px; fill: none; stroke: var(--green); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.staff-flow b { padding-inline: 6px; font: 600 14px var(--sans); }
 .flow-arrow { color: #8c998b; font-size: 18px; }
 .wall-route { position: relative; width: 36px; height: 100%; display: flex; flex-direction: column; justify-content: space-around; align-items: center; }
 .wall-route b { width: 17px; height: 13px; border-radius: 8px 7px 9px 6px; background: #d87052; transform: rotate(-17deg); box-shadow: inset -3px -3px 0 rgba(0,0,0,.12); }
@@ -140,7 +141,7 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
 .wall-route b:nth-child(4) { margin-left: 8px; }
 .wall-route span { position: absolute; top: -7px; right: -1px; color: #71786e; font: 8px var(--mono); }
 .route-yellow b { background: #d3b94f; }.route-blue b { background: #6e91a0; }.route-green b { background: #7e9d77; }.route-violet b { background: #9c8294; }
-.wall-card-foot { padding-top: 12px; border-top: 1px solid #cccec1; color: #667068; text-transform: none; letter-spacing: 0; font-size: 10px; }
+.wall-card-foot { padding-top: 12px; border-top: 1px solid #cccec1; color: #59635c; text-transform: none; letter-spacing: 0; font: 14px/1.5 var(--sans); }
 .concept-note-dark { color: #8d9388; }
 
 .vision-section { min-height: 585px; display: grid; grid-template-columns: .78fr 1.22fr; gap: 9%; align-items: center; padding-block: 115px; }
@@ -228,18 +229,22 @@ h1 em, h2 em { font-weight: 400; font-style: normal; color: var(--green); }
   .app-section { padding-block: 86px; }
   .section-intro h2, .gym-copy h2, .vision-copy h2, .future-heading h2, .closing h2 { font-size: clamp(43px, 10vw, 58px); }
   .journey-board { padding: 20px 16px 15px; }
-  .journey-step { min-height: 83px; grid-template-columns: 22px 32px 1fr auto; gap: 8px; }
+  .journey-step { min-height: 83px; grid-template-columns: 22px 32px minmax(0, 1fr) auto; gap: 8px; }
   .step-icon { width: 31px; height: 31px; }
-  .journey-step h3 { font-size: 12px; }.journey-step p { max-width: 170px; font-size: 9px; line-height: 1.5; }
-  .step-state { padding: 4px 6px; font-size: 7px; }
+  .step-icon svg { width: 21px; height: 21px; }
+  .journey-step h3 { font-size: 14px; }.journey-step p { max-width: none; font-size: 14px; line-height: 1.45; }
+  .step-state { display: none; }
   .journey-connector { margin-left: 62px; }
   .gym-section { padding-block: 77px; }
   .gym-inner { gap: 36px; }
   .wall-card { padding: 16px; }
-  .staff-flow { min-height: 190px; padding: 12px 5px; }
-  .staff-flow > div { min-height: 95px; border-radius: 13px; }
-  .staff-flow b { font-size: 8px; }
-  .flow-arrow { font-size: 13px; }
+  .staff-flow { min-height: 0; margin-block: 16px; padding: 14px; flex-direction: column; align-items: stretch; gap: 8px; }
+  .staff-flow > li:not(.flow-arrow) { min-height: 76px; flex: initial; flex-direction: row; justify-content: flex-start; gap: 14px; padding: 12px 14px; text-align: left; }
+  .staff-step-number { position: static; width: 24px; flex: 0 0 24px; }
+  .staff-flow svg { width: 28px; height: 28px; flex: 0 0 28px; }
+  .staff-flow b { padding: 0; font-size: 15px; }
+  .flow-arrow { height: 13px; font-size: 0; line-height: 0; }
+  .flow-arrow::before { content: ''; display: block; width: 1px; height: 13px; margin: auto; background: var(--green); }
   .vision-section { padding-block: 80px; gap: 39px; }
   .vision-mark { width: min(100%, 290px); align-self: center; }
   .vision-mark span { font-size: 108px; }
